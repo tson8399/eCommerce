@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <title> Grailed 2.0 </title>
+        <style>
+            img{
+                width:300px
+            }
+            input{
+                width:150px
+            }
+
+        </style>
+            
+
+        <script>
+            var quantity1 = document.getElementById("quantity1");
+                var quantity2 = document.getElementById("quantity2");
+                var quantity3 = document.getElementById("quantity3");
+                var output = document.getElementById("output");
+                var rprice1 = 60;
+                var rprice2 = 1300;
+                var rprice3 = 20;
+                var shipping1 = 25;
+                var shipping2 = 10;
+                var shipping3 = 0;
+                var subtotal = (rprice1 * parseInt(quantity1.value)) + (rprice2 * parseInt(quantity2.value)) + (rprice3 * parseInt(quantity3.value));
+                var taxrate = 0.0875;
+                var tax = subtotal * taxrate;
+                var total = subtotal + tax;
+                var build = "";
+                    build += "Subtotal: " + subtotal + "<br>";
+                    build += "Tax: " + tax + "<br>";
+                    if(subtotal < 100){
+                        build += "Shipping: " + shipping1 + "<br>";
+                    }else if(subtotal >= 100 && subtotal <= 200){
+                        build += "Shipping: " + shipping2 + "<br>";
+                    }else if(subtotal > 200){
+                        build += "Shipping: " + shipping3 + "<br>"
+                    }
+                    build += "------------------<br>";
+                    build += "Total: " + total;
+                
+                output.innerHTML = build;
+
+
+        </script>
+    </head>
+    <body>
+        <div>
+            <h2> Hoodie </h2>
+            <img src="bogo1.jpg"><br>
+            <span>$599.99</snap>
+            <p>
+                Supreme streetwear box logo hoodie!
+            </P>
+            <input id="quantity1" type="text">
+        </div>
+
+        <div>
+            <h2> Jacket </h2>
+            <img src="jacket.jpg"><br>
+            <span>$999.99</snap>
+            <p>
+                Supreme x nothface jacket 
+            </P>
+            <input id="quantity1" type="text"> 
+        </div>
+
+        <div>
+            <h2> Clothes </h2>
+            <img src="bape.jpg"><br>
+            <span>$1499.99</snap>
+            <p>
+                Bape x Adidas puffy jacket
+            </P>
+            <input id="quantity1" type="text"> 
+        </div>
+
+    </body>
+</html>
